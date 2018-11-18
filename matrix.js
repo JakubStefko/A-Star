@@ -10,7 +10,8 @@ class Matrix {
     for (i = 0; i < size; i++) {
       this.table[i] = []
       for (j = 0; j < size; j++) {
-        this.table[i][j] = Math.round(Math.random())
+        this.table[i][j] = Math.round(Math.random() * 10)
+        if (this.table[i][j] === 10) { this.table[i][j] = 'x' } // 'x' means wall, rest is just priorities
       }
     }
   }

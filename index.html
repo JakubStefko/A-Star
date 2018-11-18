@@ -8,14 +8,27 @@
 </head>
 <body>
   <p>How many rows in matrix:</p>
-  <input id='size' placeholder='Row number...' value='10'>
-  <button id='start'>Start!</button>
+  <input id='size' placeholder='Row matrix number...' value='10'>
+  <button id='createMatrix'>Create Matrix!</button>
   <span id='sizeError' style='color: red'></span>
 
+  <p>Start point:</p>
+  <input id='startX' placeholder='Row start number...' value='1'>
+  <input id='startY' placeholder='Column start number...' value='1'>
+  <span id='startError' style='color: red'></span>
 
+  <p>End point:</p>
+  <input id='endX' placeholder='Row end number...' value='10'>
+  <input id='endY' placeholder='Column end number...' value='10'>
+  <span id='endError' style='color: red'></span>
+
+  <br><br><br><button id='aStar' disabled>Start aStar!</button>
+  <span id='aStarError' style='color: red'></span>
+
+  <script src='matrix.js'></script>
+  <script src='main.js'></script>
   <script src='node.js'></script>
   <script src='priorityQueue.js'></script>
-  <script src='matrix.js'></script>
   <script src='astar.js'></script>
 </body>
 </html>
