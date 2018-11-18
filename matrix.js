@@ -2,7 +2,7 @@ class Matrix {
   constructor(size) {
     this.size = size
     this.table = []
-    this.initTable(size)
+    this.init(size)
   }
 
   init (size) {
@@ -18,10 +18,11 @@ class Matrix {
   showAll () {
     let i, j, score
     for (i = 0; i < this.size; i++) {
-      score = `${i + 1}: `
-      for (j = 0; j < this.size; j++) {
+      score = `${i + 1}:\t`
+      for (j = 0; j < this.size - 1; j++) {
         score = String.prototype.concat(score, this.table[i][j], ' ')
       }
+      score = String.prototype.concat(score, this.table[i][j])
       console.log(score)
     }
   }
