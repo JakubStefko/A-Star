@@ -3,8 +3,8 @@ class priorityQueue {
     this.items = []
   }
 
-  add (x, y, priority) {
-    let v = new Node(x, y, priority)
+  add (x, y, priority, parentX, parentY) {
+    let v = new Node(x, y, priority, parentX, parentY)
     let i = 0
     let contain = false
 
