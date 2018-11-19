@@ -59,6 +59,7 @@ const validateNumber = (input) => {
     aStar.disabled = true
   }
   else if (Number(input.value) !== Math.round(Number(input.value))) {
+    console.log('decimal validate error', {score1: Number(input.value), score2: Math.round(Number(input.value))})
     switch (input.id) {
       case ('size'): {
         sizeError.innerHTML = 'Number of rows must be decimal'
@@ -91,27 +92,27 @@ const validateNumber = (input) => {
   else {
     switch (input.id) {
       case ('size'): {
-        sizeError.innerHTML = 'Number of rows must be decimal'
+        sizeError.innerHTML = ''
         break
       }
       case ('startX'): {
-        startError.innerHTML = 'Start row number must be decimal'
+        startError.innerHTML = ''
         break
       } 
       case ('startY'): {
-        startError.innerHTML = 'Start column number must be decimal'
+        startError.innerHTML = ''
         break
       } 
       case ('endX'): {
-        endError.innerHTML = 'End row number must be decimal'
+        endError.innerHTML = ''
         break
       }
       case ('endY'): {
-        endError.innerHTML = 'End row number must be decimal'
+        endError.innerHTML = ''
         break
       }
       default: {
-        aStarError.innerHTML = 'Validation error!'
+        aStarError.innerHTML = ''
         break
       } 
     }
@@ -146,15 +147,15 @@ aStar.addEventListener('click', () => {
   aStarSearch(Number(startX.value) - 1, Number(startY.value) - 1, Number(endX.value) - 1, Number(endY.value) - 1)
 })
 
-// size.addEventListener('change', () => validateNumber(size))
-// size.addEventListener('blur', () => validateNumber(size))
+size.addEventListener('change', () => validateNumber(size))
+size.addEventListener('blur', () => validateNumber(size))
 
-// startX.addEventListener('change', () => validateNumber(startX))
-// startX.addEventListener('blur', () => validateNumber(startX))
-// startY.addEventListener('change', () => validateNumber(startY))
-// startY.addEventListener('blur', () => validateNumber(startY))
+startX.addEventListener('change', () => validateNumber(startX))
+startX.addEventListener('blur', () => validateNumber(startX))
+startY.addEventListener('change', () => validateNumber(startY))
+startY.addEventListener('blur', () => validateNumber(startY))
 
-// endX.addEventListener('change', () => validateNumber(endX))
-// endX.addEventListener('blur', () => validateNumber(endX))
-// endY.addEventListener('change', () => validateNumber(endY))
-// endY.addEventListener('blur', () => validateNumber(endY))
+endX.addEventListener('change', () => validateNumber(endX))
+endX.addEventListener('blur', () => validateNumber(endX))
+endY.addEventListener('change', () => validateNumber(endY))
+endY.addEventListener('blur', () => validateNumber(endY))
